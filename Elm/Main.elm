@@ -16,10 +16,9 @@ view model =
         , div [ ] [ text model.err ] 
     ]
 getGithubInfo userId =
-    Http.send GithubInfoRetrieved <| githubRequest ("http://api.github.com/users/" ++ model.user)
+    Http.send GithubInfoRetrieved <| githubRequest <| "http://api.github.com/users/" ++ userId
 githubRequest url =
-    Http.request 
-        { method = "GET", url = url, body = emptyBody, expect = expectJson (Decode.field "followers" <| Decode.int), timeout = Nothing, withCredentials = False, headers = [ Http.header "Accept" "application/json"] }
+    Http.request { method = "GET", url = url, body = emptyBody, expect = expectJson (Decode.field "followers" <| Decode.int), timeout = Nothing, withCredentials = False, headers = [ Http.header "Accept" "application/json"] }
 update msg model =
     case msg of
         UserId id ->
