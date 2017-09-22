@@ -1,5 +1,5 @@
 -- cerner_2^5_2017
--- Ever wonder how many repos you own on 
+-- Ever wonder how many followers you have on Github?
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
