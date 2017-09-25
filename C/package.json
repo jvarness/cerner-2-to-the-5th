@@ -1,0 +1,40 @@
+{
+    "author": "jake.varness@gmail.com",
+    "dependencies": {},
+    "keywords": [],
+    "name": "first-hand",
+    "pebble": {
+        "displayName": "First Hand",
+        "enableMultiJS": true,
+        "messageKeys": [],
+        "projectType": "native",
+        "resources": {
+            "media": [
+                {
+                    "file": "images/fh-logo",
+                    "name": "FH_LOGO",
+                    "storageFormat": "png",
+                    "targetPlatforms": [
+                        "aplite",
+                        "basalt",
+                        "chalk",
+                        "diorite"
+                    ],
+                    "type": "bitmap"
+                }
+            ]
+        },
+        "sdkVersion": "3",
+        "targetPlatforms": [
+            "aplite",
+            "basalt",
+            "chalk",
+            "diorite"
+        ],
+        "uuid": "7568a2f0-cf48-4f6b-8803-09d46eedcf5b",
+        "watchapp": {
+            "watchface": true
+        }
+    },
+    "version": "1.0.0"
+}
