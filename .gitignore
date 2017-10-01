@@ -1,3 +1,5 @@
 **/elm-stuff
 *.exe
 Impact2.cs
+Crystal/.shards
+Crystal/lib
