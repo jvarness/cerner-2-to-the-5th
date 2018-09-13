@@ -3,3 +3,4 @@
 Impact2.cs
 Crystal/.shards
 Crystal/lib
+**/node_modules
