@@ -1,0 +1,31 @@
+<!-- cerner_2^5_2018 -->
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  </head>
+  <body>
+    <div class="container" id="app">
+      <div class="row justify-content-md-center">
+        <h1 class="display-6">{{message}}</h1>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" v-model="newTodo" placeholder="Enter something todo here!"/>
+          <div class="input-group-append"> <button type="button" class="btn btn-primary" @click="addTodo">+</button> </div>
+        </div>
+      </div>
+      <ul class="list-group list-group-flush"> <li class="list-group-item" v-for="item in todos">{{item.text}}</li> </ul>
+    </div>
+  </body>
+  <script type="text/javascript">
+    var app = new Vue({
+      el: "#app",
+      data: { message: "Todo App", newTodo: "", todos: [] },
+      methods: {
+        addTodo: function(event) {
+          this.todos.push({text: this.newTodo})
+          this.newTodo = ""
+        }
+      }
+    });
+  </script>
+</html>
