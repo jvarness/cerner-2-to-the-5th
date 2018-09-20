@@ -1,8 +1,8 @@
 **/elm-stuff
 *.exe
 2017/C#/Impact2.cs
-2017/Crystal/.shards
-2017/Crystal/lib
+**/.shards
+**/lib
 **/node_modules
 **/obj
 **/bin
