@@ -8,3 +8,5 @@
 **/bin
 **/.vs
 **/*.class
+**/.build
+**/*.xcodeproj/
