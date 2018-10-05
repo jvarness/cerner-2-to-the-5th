@@ -10,3 +10,4 @@
 **/*.class
 **/.build
 **/*.xcodeproj/
+**/*.out
