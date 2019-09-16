@@ -1,0 +1,3 @@
+{
+  "builds": [{ "src": "index.go", "use": "@now/go" }]
+}
