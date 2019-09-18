@@ -1,0 +1,17 @@
+name: socket-echo
+version: 0.1.0
+
+authors:
+  - Jake Varness <jake.varness@cerner.com>
+
+targets:
+  cr-socket:
+    main: src/socket-echo.cr
+
+dependencies:
+  kemal:
+    github: kemalcr/kemal
+
+crystal: 0.30.1
+
+license: MIT
