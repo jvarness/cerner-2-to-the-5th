@@ -13,7 +13,7 @@
           <div class="input-group-append"> <button type="button" class="btn btn-primary" @click="addTodo">+</button> </div>
         </div>
       </div>
-      <ul class="list-group list-group-flush"> <li class="list-group-item" v-for="item in todos">{{item.text}}</li> </ul>
+      <ul class="list-group list-group-flush"> <li class="list-group-item" v-for="item in todos">{{item.text}} <div class="align-end" style="padding-top:20px"> <button color="#2196F3" class="btn btn-primary" v-on:click="checked(item)">Done  </button></div></li> </ul>
     </div>
   </body>
   <script type="text/javascript">
@@ -24,7 +24,8 @@
         addTodo: function(event) {
           this.todos.push({text: this.newTodo})
           this.newTodo = ""
-        }
+        },
+        checked: function(item){this.todos.splice(this.todos.indexOf(item),1)}
       }
     });
   </script>
