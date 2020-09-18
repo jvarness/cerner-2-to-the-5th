@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!-- cerner_2^5_2020 -->
+<html>
+  <head><style>body { margin: 0; } canvas { display: block; }</style></head>
+  <body>
+    <script src="https://unpkg.com/three"></script>
+    <script>
+      var scene = new THREE.Scene();
+      scene.background = new THREE.Color(0xaaaaaa)
+      var camera = new THREE.OrthographicCamera(-(window.innerWidth / 10), window.innerWidth / 10, window.innerHeight / 15, -(window.innerHeight / 15), 1, 1000);
+      var renderer = new THREE.WebGLRenderer();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      document.body.appendChild(renderer.domElement);
+      var shape = new THREE.Shape();
+      shape.moveTo( -10, 0 ); shape.bezierCurveTo(-7.5,-2,17.5,-2,20,0); shape.bezierCurveTo(25,2,28,5,30,10); shape.bezierCurveTo(31,11,29,20,25,22); shape.bezierCurveTo(26,22,29,26,24,28); shape.bezierCurveTo(18,30,16,24,17,24); shape.bezierCurveTo(17,25,-6,25,-7,24); shape.bezierCurveTo(-6,24,-5,30,-14,28); shape.bezierCurveTo(-18,26,-18,23,-15,22); shape.bezierCurveTo(-17,21,-20,15,-20,10); shape.bezierCurveTo(-18,5,-15,2,-10,0);
+      var geometry = new THREE.ShapeBufferGeometry( shape );
+      var material = new THREE.MeshBasicMaterial({ color: 0xaa5522, side: THREE.DoubleSide });
+      var cube = new THREE.Mesh(geometry, material);
+      cube.position.z = -40;
+      camera.zoom = 10;
+      scene.add(cube);
+      function animate() {
+        cube.rotation.y += .01;
+        camera.left = (window.innerWidth/-10), camera.right = window.innerWidth/10, camera.top = window.innerHeight/15, camera.bottom=(window.innerHeight/-15);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        requestAnimationFrame(animate);
+        renderer.render(scene, camera);
+      }
+      animate();
+    </script>
+  </body>
+</html>
