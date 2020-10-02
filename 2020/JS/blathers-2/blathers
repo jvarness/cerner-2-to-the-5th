@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+// cerner_2^5_2020
+"use strict";
+const https = require('https');
+const { exit } = require('process');
+
+const seaID = Math.floor((Math.random() * 39) + 1);
+https.get(`https://acnhapi.com/v1/sea/${seaID}`, (reply) => {
+  if (reply.statusCode !== 200) {
+    console.error(`Error on load: ${reply.statusCode}`);
+    exit(1);
+  } else {
+    var body = '';
+    reply.on('data', (data) => {
+      body += data;
+    });
+    reply.on('end', () => {
+      const creature = JSON.parse(body);
+      console.log(`${creature["catch-phrase"]}`);
+      console.log(`Blathers says: ${creature["museum-phrase"]}`);
+    });
+  }
+});
